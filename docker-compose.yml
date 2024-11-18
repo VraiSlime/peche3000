@@ -1,0 +1,29 @@
+services:
+  peche3000-app:
+    build: .
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    depends_on:
+      - mariadb
+    restart: on-failure
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mariadb://mariadb:3306/peche3000
+      SPRING_DATASOURCE_USERNAME: peche3000
+      SPRING_DATASOURCE_PASSWORD: peche3000
+
+  mariadb:
+    image: mariadb:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: peche3000
+      MYSQL_USER: peche3000
+      MYSQL_PASSWORD: peche3000
+    ports:
+      - "3307:3306"
+    volumes:
+      - mariadb_data:/var/lib/mysql
+
+volumes:
+  mariadb_data:

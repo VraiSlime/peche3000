@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - Pêche 3000</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+</head>
+<body>
+<!-- Navbar -->
+<div th:replace="fragments/navbar :: navbar"></div>
+
+<header class="position-relative">
+    <img src="/images/peche_header.webp" class="w-100" alt="Pêche Header" style="height: 100vh; object-fit: cover;">
+    <div class="position-absolute top-50 start-50 translate-middle text-center text-white">
+        <h1>Pêche 3000</h1>
+        <p class="lead">Tout l'univers de la pêche à portée de clic</p>
+    </div>
+</header>
+
+<!-- Articles section -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Nos Articles de Pêche</h2>
+        <div class="row g-4">
+
+            <div class="col-md-3">
+                <a th:href="@{/produits/categories(categorie='Canne à pêche')}" class="text-decoration-none">
+                    <div class="card h-100">
+                        <img src="/images/canne.jpg" class="card-img-top" alt="Canne à pêche" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Canne à pêche</h5>
+                            <p class="card-text">Une canne robuste et légère pour une expérience optimale.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-3">
+                <a th:href="@{/produits/categories(categorie='Moulinet')}" class="text-decoration-none">
+                    <div class="card h-100">
+                        <img src="/images/moulinet.jpg" class="card-img-top" alt="Moulinet de pêche" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Moulinet de pêche</h5>
+                            <p class="card-text">Un moulinet performant pour des lancés précis et fluides.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-3">
+                <a th:href="@{/produits/categories(categorie='Boite')}" class="text-decoration-none">
+                    <div class="card h-100">
+                        <img src="/images/boite.jpg" class="card-img-top" alt="Boîte à accessoires" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Boîte à accessoires</h5>
+                            <p class="card-text">Rangez vos leurres et outils de pêche dans cette boîte pratique.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-3">
+                <a th:href="@{/produits/categories(categorie='Leurre')}" class="text-decoration-none">
+                    <div class="card h-100">
+                        <img src="/images/leurre.jpg" class="card-img-top" alt="Leurres de pêche" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Leurres de pêche</h5>
+                            <p class="card-text">Une sélection de leurres variés pour capturer tous types de poissons.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Concours section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-4">Inscrivez-vous à nos Concours de Pêche</h2>
+        <p class="text-center">
+            Participez à des concours locaux de pêche et testez vos compétences contre d'autres passionnés.
+            Inscrivez-vous facilement en ligne et vivez une expérience unique !
+        </p>
+        <div class="text-center">
+            <a href="/concours" class="btn btn-primary">Voir les concours</a>
+        </div>
+    </div>
+</section>
+
+<!-- Permis section -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Demandez votre Permis de Pêche</h2>
+        <p class="text-center">
+            Simplifiez vos démarches en demandant votre permis de pêche directement sur notre site.
+            Que ce soit pour une journée ou pour une saison, nous avons le permis adapté à vos besoins.
+        </p>
+        <div class="text-center">
+            <a href="/permis/nouveau" class="btn btn-primary">Faire une demande de permis</a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-3">
+    <p>&copy; 2024 Pêche 3000 - Tous droits réservés.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
